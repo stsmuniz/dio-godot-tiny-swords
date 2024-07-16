@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf4xwdr6xy0dq"]
+
+[ext_resource type="Texture2D" uid="uid://ccfrsilby281q" path="res://assets/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="1_fx081"]
+[ext_resource type="Texture2D" uid="uid://copi1cgrcnllc" path="res://assets/Terrain/Bridge/Bridge_All.png" id="2_got1p"]
+[ext_resource type="Texture2D" uid="uid://d0vll40gq1b7p" path="res://assets/Terrain/Ground/Tilemap_Elevation.png" id="3_mg5yb"]
+[ext_resource type="Texture2D" uid="uid://b602fyrglpjn0" path="res://assets/Terrain/Ground/Tilemap_Flat.png" id="4_f31cy"]
+[ext_resource type="Texture2D" uid="uid://2qsootybowcv" path="res://assets/Terrain/Water/Water.png" id="5_p3rre"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WarriorRed" type="Sprite2D" parent="."]
+position = Vector2(554, 753)
+texture = ExtResource("1_fx081")
+
+[node name="BridgeAll" type="Sprite2D" parent="."]
+position = Vector2(1302, 177)
+texture = ExtResource("2_got1p")
+
+[node name="TilemapElevation" type="Sprite2D" parent="."]
+position = Vector2(1313, 666)
+texture = ExtResource("3_mg5yb")
+
+[node name="TilemapFlat" type="Sprite2D" parent="."]
+position = Vector2(1831, 179)
+texture = ExtResource("4_f31cy")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(1564, 455)
+texture = ExtResource("5_p3rre")

@@ -1,0 +1,136 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgvs04bdq3aq3"]
+
+[ext_resource type="Script" path="res://ui/game_over_ui.gd" id="1_81klx"]
+[ext_resource type="Texture2D" uid="uid://qr5vbm60mvtc" path="res://assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="1_xxavr"]
+[ext_resource type="Texture2D" uid="uid://cgxmts04fr4cs" path="res://assets/UI/Banners/Banner_Horizontal.png" id="2_qgcje"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j27dh"]
+texture = ExtResource("1_xxavr")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="SystemFont" id="SystemFont_mi6d8"]
+font_names = PackedStringArray("JetBrains Mono")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4coa5"]
+font = SubResource("SystemFont_mi6d8")
+font_size = 36
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpsa7"]
+texture = ExtResource("2_qgcje")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 40.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 120)
+
+[sub_resource type="SystemFont" id="SystemFont_lgmis"]
+font_names = PackedStringArray("JetBrains Mono")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3hdr"]
+font = SubResource("SystemFont_lgmis")
+font_size = 32
+font_color = Color(0, 0, 0, 0.752941)
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_81klx")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.752941)
+
+[node name="TopPanel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 16.0
+offset_right = 171.0
+offset_bottom = 155.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j27dh")
+
+[node name="GameOverLabel" type="Label" parent="TopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -27.5
+offset_right = 43.5
+offset_bottom = -4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_4coa5")
+
+[node name="BottomPanel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -226.0
+offset_right = 288.0
+offset_bottom = -63.9999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wpsa7")
+
+[node name="CenterContainer" type="CenterContainer" parent="BottomPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -46.0
+offset_right = 170.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="BottomPanel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+columns = 2
+
+[node name="TimeSurvived" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Time Survived:"
+label_settings = SubResource("LabelSettings_c3hdr")
+
+[node name="TimeLabel" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99:59"
+label_settings = SubResource("LabelSettings_c3hdr")
+
+[node name="MonstersDefeated" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Monsters Defeated:"
+label_settings = SubResource("LabelSettings_c3hdr")
+
+[node name="MonstersLabel" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "999999"
+label_settings = SubResource("LabelSettings_c3hdr")

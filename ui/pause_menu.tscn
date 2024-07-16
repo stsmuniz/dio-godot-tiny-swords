@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7et036hwvhp2"]
+
+[ext_resource type="Theme" uid="uid://bb7j6t1rf2q65" path="res://ui/default_button.tres" id="1_5yhdf"]
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_cwpae"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_3o5rk"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_yas5o"]
+events = [SubResource("InputEventAction_3o5rk")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uoafy"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_cwpae")
+
+[node name="BgOverlay" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0.752941)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_right = 256
+
+[node name="MenuHolder" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PauseBtn" type="Button" parent="MarginContainer/MenuHolder"]
+layout_mode = 2
+theme = ExtResource("1_5yhdf")
+shortcut = SubResource("Shortcut_yas5o")
+text = "Resume"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/MenuHolder"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uoafy")
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/MenuHolder"]
+layout_mode = 2
+theme = ExtResource("1_5yhdf")
+text = "Quit to Title"
+
+[connection signal="pressed" from="MarginContainer/MenuHolder/PauseBtn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuHolder/QuitBtn" to="." method="_on_quit_btn_pressed"]

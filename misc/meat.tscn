@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuqylun4tkd0l"]
+
+[ext_resource type="Texture2D" uid="uid://b1d6qwe4dkstx" path="res://assets/Resources/Resources/M_Spawn.png" id="1_p0mt2"]
+[ext_resource type="Script" path="res://misc/life_regenerator.gd" id="2_shjmu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42k41"]
+atlas = ExtResource("1_p0mt2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn3i5"]
+atlas = ExtResource("1_p0mt2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kqlx"]
+atlas = ExtResource("1_p0mt2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwmg1"]
+atlas = ExtResource("1_p0mt2")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfq0o"]
+atlas = ExtResource("1_p0mt2")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2q00"]
+atlas = ExtResource("1_p0mt2")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q15kw"]
+atlas = ExtResource("1_p0mt2")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asbun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42k41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn3i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kqlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwmg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfq0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2q00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q15kw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4curq"]
+radius = 23.0868
+
+[node name="Meat" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_asbun")
+autoplay = "default"
+script = ExtResource("2_shjmu")
+regeneration_amount = 20
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_4curq")

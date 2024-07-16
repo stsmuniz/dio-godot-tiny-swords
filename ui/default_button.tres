@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bb7j6t1rf2q65"]
+
+[sub_resource type="SystemFont" id="SystemFont_573g8"]
+font_names = PackedStringArray("JetBrains Mono")
+font_weight = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckwa2"]
+bg_color = Color(2.5028e-06, 0.664203, 0.823055, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o38qp"]
+bg_color = Color(1.82897e-06, 0.660646, 0.841603, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.637843, 0.637843, 0.637843, 1)
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mhb5"]
+bg_color = Color(0.818034, 0.247263, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+Button/fonts/font = SubResource("SystemFont_573g8")
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_ckwa2")
+Button/styles/normal = SubResource("StyleBoxFlat_o38qp")
+Button/styles/pressed = SubResource("StyleBoxFlat_0mhb5")
