@@ -1,5 +1,6 @@
 # Tiny Swords
 ![](https://img.itch.zone/aW1nLzE2OTQwNjA2LnBuZw==/original/FHkD5X.png)
+
 Um projeto para o desafio do bootcamp Dio Santander Godot
 
 ## Como jogar
